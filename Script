@@ -1,0 +1,28 @@
+-- Shift Lock Script para Roblox (StarterPlayerScripts)
+local UserInputService = game:GetService("UserInputService")
+local Players = game:GetService("Players")
+local Camera = game.Workspace.CurrentCamera
+
+local player = Players.LocalPlayer
+local shiftLockEnabled = false
+
+-- Função que ativa/desativa o Shift Lock
+local function toggleShiftLock()
+    shiftLockEnabled = not shiftLockEnabled
+    if shiftLockEnabled then
+        -- Travar a câmera atrás do personagem
+        Camera.CameraSubject = player.Character.Humanoid
+        Camera.CameraType = Enum.CameraType.LockFirstPerson
+    else
+        -- Voltar ao padrão (câmera livre)
+        Camera.CameraType = Enum.CameraType.Custom
+    end
+end
+
+-- Detectar pressionamento da tecla Shift
+UserInputService.InputBegan:Connect(function(input, processed)
+    if processed then return end
+    if input.KeyCode == Enum.KeyCode.LeftShift then
+        toggleShiftLock()
+    end
+end)
