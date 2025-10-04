@@ -11,7 +11,7 @@ Este projeto inclui um script oficial de Shift Lock para Roblox, permitindo que 
 1. Abra o Roblox Studio.
 2. No Explorer, vá em `StarterPlayer > StarterPlayerScripts`.
 3. Clique com o botão direito em `StarterPlayerScripts` e escolha **Insert Object > LocalScript**.
-4. Copie e cole o conteúdo de [`ShiftLockScript`](https://github.com/pixelmedi91-del/Woksp/blob/main/README.md) neste LocalScript.
+4. Copie e cole o conteúdo de [`ShiftLockScript`](https://github.com/pixelmedi91-del/Woksp/blob/main/Script) neste LocalScript.
 
 ---
 
