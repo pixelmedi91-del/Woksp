@@ -1,28 +1,55 @@
--- Shift Lock Script para Roblox (StarterPlayerScripts)
+-- Shift Lock Script para Roblox (PC e Mobile)
 local UserInputService = game:GetService("UserInputService")
 local Players = game:GetService("Players")
 local Camera = game.Workspace.CurrentCamera
-
 local player = Players.LocalPlayer
+
 local shiftLockEnabled = false
 
 -- Função que ativa/desativa o Shift Lock
 local function toggleShiftLock()
     shiftLockEnabled = not shiftLockEnabled
     if shiftLockEnabled then
-        -- Travar a câmera atrás do personagem
         Camera.CameraSubject = player.Character.Humanoid
         Camera.CameraType = Enum.CameraType.LockFirstPerson
     else
-        -- Voltar ao padrão (câmera livre)
         Camera.CameraType = Enum.CameraType.Custom
     end
 end
 
--- Detectar pressionamento da tecla Shift
+-- Detectar tecla Shift para PC
 UserInputService.InputBegan:Connect(function(input, processed)
     if processed then return end
     if input.KeyCode == Enum.KeyCode.LeftShift then
         toggleShiftLock()
     end
 end)
+
+-- Adicionar botão para Mobile
+if UserInputService.TouchEnabled then
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Name = "ShiftLockGui"
+    screenGui.Parent = player:WaitForChild("PlayerGui")
+
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(0, 120, 0, 40)
+    button.Position = UDim2.new(0.5, -60, 1, -80)
+    button.AnchorPoint = Vector2.new(0.5, 1)
+    button.Text = "Shift Lock"
+    button.BackgroundColor3 = Color3.fromRGB(50, 50, 200)
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.Font = Enum.Font.SourceSansBold
+    button.TextSize = 22
+    button.Parent = screenGui
+
+    button.MouseButton1Click:Connect(function()
+        toggleShiftLock()
+        if shiftLockEnabled then
+            button.Text = "Desbloquear"
+            button.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+        else
+            button.Text = "Shift Lock"
+            button.BackgroundColor3 = Color3.fromRGB(50, 50, 200)
+        end
+    end)
+end
