@@ -1,8 +1,8 @@
 # Woksp
 
-## Shift Lock Script para Roblox
+## Shift Lock Script para Roblox (PC & Mobile)
 
-Este projeto inclui um script oficial de Shift Lock para Roblox, permitindo que jogadores travem a câmera atrás do personagem pressionando Shift.
+Este projeto inclui um script oficial de Shift Lock para Roblox, permitindo que jogadores travem a câmera atrás do personagem pressionando Shift (PC) ou um botão oficial (Mobile).
 
 ---
 
@@ -17,14 +17,17 @@ Este projeto inclui um script oficial de Shift Lock para Roblox, permitindo que 
 
 ### 🕹️ Como usar
 
-- Pressione a tecla **Shift** durante o jogo para travar a câmera atrás do personagem (igual ao Shift Lock oficial do Roblox).
-- Pressione **Shift** novamente para desativar.
+**PC:**  
+- Pressione a tecla **Shift** durante o jogo para travar/destravar a câmera atrás do personagem.
+
+**Mobile:**  
+- Um botão oficial "Shift Lock" aparece na tela. Toque para ativar/desativar o Shift Lock. O texto e a cor do botão mudam conforme o estado.
 
 ---
 
 ### 💡 Sobre
 
-Script desenvolvido para facilitar a implementação do Shift Lock em seus jogos Roblox.
+Script desenvolvido para facilitar a implementação do Shift Lock em seus jogos Roblox, compatível com todas as plataformas.
 
 ---
 
